@@ -117,6 +117,7 @@ class MigratePlugin {
     this.migration = new Promise((resolve, reject) => {
       migrate.load({
         stateStore: this.stateStore,
+        migrationsDirectory: this.config.migrationDir,
         ignoreMissing: this.config.ignoreMissing || false,
         filterFunction: this.filterByFileExtension.bind(this),
       }, (err, set) => {
